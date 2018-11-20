@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import net.skhu.leisure.R;
@@ -22,69 +24,48 @@ import java.util.List;
 import java.util.Map;
 
 public class Gomduri_siseol extends AppCompatActivity {
-    private ArrayList<String> mGroupList = null;
-    private ArrayList<ArrayList<Integer>> mChildList = null;
-    private ArrayList<Integer> mChildListContent = null;
-    private ExpandableListView mListView;
+    ViewPager viewPager;
+    Adapter adapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gomduri_siseol);
-        setLayout();
-
         ArrayList<String> list1 =new ArrayList<String>(Arrays.asList("심리운동실","스피닝실","사회문화교실","골프연습장","에어로빅실","휘트니스실","유아실","미술실","수영장","재활체육실","요가실","체육관","회의실","장애인편의시설"));
-        ArrayList<Integer> list2= new ArrayList<Integer>(Arrays.asList(R.drawable.simli1,R.drawable.simli2,R.drawable.simli3));
-        ArrayList<Integer> list3= new ArrayList<Integer>(Arrays.asList(R.drawable.spinning1,R.drawable.spinning2));
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list1);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        spinner.setAdapter(adapter);
+        final TextView textView = (TextView)findViewById(R.id.explanation);
 
-        mGroupList = list1;
-        mChildList = new ArrayList<ArrayList<Integer>>();
-        mChildListContent = list2;
+        textView.setText("162㎡(49평) \\n 규모  - 전면 대형거울 설치, 냉·난방 시설 완비, \\n충격완화 바닥설계 - 심리운동프로그램 등에 활용");
 
-
-        mChildList.add(list2);
-        mChildList.add(list3);
-
-        mListView.setAdapter(new BaseExpandableAdapter(this, mGroupList, mChildList));
-
-        mListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-                    Toast.makeText(getApplicationContext(), "g click = " + groupPosition, Toast.LENGTH_SHORT).show();
-                    return false;
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 0:adapter2.setimg(new int[] {R.drawable.simli1, R.drawable.simli2, R.drawable.simli3});
+                        textView.setText("162㎡(49평) 규모  - 전면 대형거울 설치, 냉·난방 시설 완비,\n" +
+                                " 충격완화 바닥설계 - 심리운동프로그램 등에 활용");break;
+                    case 1:adapter2.setimg(new int[] {R.drawable.spinning1,R.drawable.spinning2,0});
+
+                        textView.setText("66㎡(20평) 규모\n" +
+                                "\n" +
+                                "- 실내싸이클과 음악, 댄스, 조명이 함께하는 GX 프로그램 운영");break;
+
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                adapter2.setimg(new int[] {R.drawable.simli1, R.drawable.simli2, R.drawable.simli3});
+                textView.setText("162㎡(49평) 규모  - 전면 대형거울 설치, 냉·난방 시설 완비, 충격완화 바닥설계 - 심리운동프로그램 등에 활용");
             }
         });
 
 
-        mListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-                Toast.makeText(getApplicationContext(), "c click = " + childPosition,
-                        Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
-
-        mListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getApplicationContext(), "g Collapse = " + groupPosition,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        mListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-            @Override
-            public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getApplicationContext(), "g Expand = " + groupPosition,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
-
-    private void setLayout(){
-        mListView = (ExpandableListView)findViewById(R.id.ListView);
+        viewPager = (ViewPager)findViewById(R.id.imgPager);
+        adapter2 = new Adapter(this);
+        viewPager.setAdapter(adapter2);
     }
 }
