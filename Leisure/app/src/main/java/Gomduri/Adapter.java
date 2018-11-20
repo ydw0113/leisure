@@ -46,4 +46,8 @@ public class Adapter extends PagerAdapter{
     public void destroyItem(ViewGroup container, int position, Object object) {
 
     }
+    public void setimg(int[] img){
+       this.images=null;
+        this.images = img;
+    }
 }
