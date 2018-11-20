@@ -32,7 +32,6 @@
             android:name="Gomduri.GomduriActivity"
             android:label="곰두리"
             android:theme="@style/AppTheme" />
-        <activity android:name="Gomduri.Gomduri_siseol" />
         <activity android:name="Gomduri.GomduriInfo" />
         <activity android:name="Gomduri.GomduriProgram" />
 
