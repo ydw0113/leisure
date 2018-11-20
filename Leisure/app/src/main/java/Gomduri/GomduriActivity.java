@@ -18,24 +18,16 @@ public class GomduriActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gomduri);
         final Button button1 = (Button)findViewById(R.id.button);
-        final Button button2 = (Button)findViewById(R.id.button2);
-        final Button button3 = (Button)findViewById(R.id.button3);
+        final Button button2 = (Button)findViewById(R.id.button3);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Gomduri_siseol.class);
+                Intent intent = new Intent(getApplicationContext(), Tab.class);
                 startActivity(intent);
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), GomduriProgram.class);
-                startActivity(intent);
-            }
-        });
-        button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), GomduriInfo.class);
