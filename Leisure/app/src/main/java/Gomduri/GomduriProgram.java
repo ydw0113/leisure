@@ -1,8 +1,11 @@
 package Gomduri;
 
+import android.app.TabActivity;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -11,6 +14,7 @@ import android.widget.ExpandableListView;
 import android.widget.ListView;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.Spinner;
+import android.widget.TabHost;
 import android.widget.Toast;
 
 import net.skhu.leisure.R;
@@ -21,73 +25,23 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-public class GomduriProgram extends AppCompatActivity {
-    private ArrayList<String> mGroupList = null;
-    private ArrayList<ArrayList<String>> mChildList = null;
-    private ArrayList<String> mChildListContent = null;
-    private ExpandableListView mListView;
-
+public class GomduriProgram extends TabActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gomduriprogram);
-        setLayout();
+        TabHost tabHost = getTabHost();
+        LayoutInflater.from(this).inflate(R.layout.activity_gomduriprogram,
+                tabHost.getTabContentView(), true);
 
-        ArrayList<String> list1= new ArrayList<String>(Arrays.asList("시설물 정보","활동정보","기타정보"));
-
-        ArrayList<String> list2 =new ArrayList<String>(Arrays.asList("심리운동실     스피닝실","스피닝실","사회문화교실",
-                "골프연습장","에어로빅실","휘트니스실","유아실","미술실","수영장","재활체육실","요가실","체육관","회의실","장애인편의시설"));
-
-
-        mGroupList = list1;
-        mChildList = new ArrayList<ArrayList<String>>();
-        mChildListContent = list2;
-
-
-        mChildList.add(mChildListContent);
-        mChildList.add(mChildListContent);
-        mChildList.add(mChildListContent);
-
-        mListView.setAdapter(new ProgramAdapter(this, mGroupList, mChildList));
-
-        mListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
-            @Override
-            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-                Toast.makeText(getApplicationContext(), "g click = " + groupPosition, Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
-
-
-        mListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-                Toast.makeText(getApplicationContext(), "c click = " + childPosition,
-                        Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
-
-        mListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getApplicationContext(), "g Collapse = " + groupPosition,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        mListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-            @Override
-            public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getApplicationContext(), "g Expand = " + groupPosition,
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        tabHost.addTab(tabHost.newTabSpec("tab1")
+                .setIndicator("성인수영")
+                .setContent(R.id.view1));
+        tabHost.addTab(tabHost.newTabSpec("tab3")
+                .setIndicator("심리운동,치료미술,치료음악")
+                .setContent(R.id.view2));
+        tabHost.addTab(tabHost.newTabSpec("tab3")
+                .setIndicator("유아,어린이,청소년수영")
+                .setContent(R.id.view3));
     }
 
-    private void setLayout(){
-        mListView = (ExpandableListView)findViewById(R.id.ListView);
-    }
 }
