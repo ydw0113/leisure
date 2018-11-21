@@ -1,17 +1,407 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="Gomduri.GomduriProgram">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <ExpandableListView
-
-        android:id="@+id/ListView"
-
+    <TableLayout
+        android:id="@+id/view1"
         android:layout_width="match_parent"
+        android:layout_height="411dp"
+        android:layout_marginTop="50dp"
+        android:stretchColumns="*">
+        <TableRow>
 
-        android:layout_height="wrap_content" />
+            <TextView
+                android:layout_height="match_parent"
+                android:text="프로그램명"
+                android:textSize="24sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
 
-</android.support.constraint.ConstraintLayout>
+            <TextView
+                android:layout_height="match_parent"
+                android:text="요일/시간"
+                android:textSize="24sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="대상"
+                android:textSize="24sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="이용료"
+                android:textSize="24sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="건강증진A"
+                android:textSize="16sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="월~토\n11:00~11:50"
+                android:textSize="16sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="성인"
+                android:textSize="16sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="37,000"
+                android:textSize="16sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="2"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="3"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="4"
+                android:textSize="60sp"
+                android:background="@drawable/back"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="2"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="3"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="4"
+                android:textSize="60sp"
+                android:background="@drawable/back"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="2"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="3"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="4"
+                android:textSize="60sp"
+                android:background="@drawable/back"/>
+        </TableRow>
+
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="411dp"
+        android:layout_marginTop="50dp"
+        android:stretchColumns="*">
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="프로그램명"
+                android:textSize="24sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="요일/시간"
+                android:textSize="24sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="대상"
+                android:textSize="24sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="이용료"
+                android:textSize="24sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="2"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="3"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="4"
+                android:textSize="60sp"
+                android:background="@drawable/back"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="2"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="3"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="4"
+                android:textSize="60sp"
+                android:background="@drawable/back"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="2"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="3"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="4"
+                android:textSize="60sp"
+                android:background="@drawable/back"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="2"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="3"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="4"
+                android:textSize="60sp"
+                android:background="@drawable/back"/>
+        </TableRow>
+
+    </TableLayout>
+    <TableLayout
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="411dp"
+        android:layout_marginTop="50dp"
+        android:stretchColumns="*">
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="프로그램명"
+                android:textSize="24sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="요일/시간"
+                android:textSize="24sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="대상"
+                android:textSize="24sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="이용료"
+                android:textSize="24sp"
+                android:background="@drawable/back"
+                android:gravity="center"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="2"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="3"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="4"
+                android:textSize="60sp"
+                android:background="@drawable/back"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="2"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="3"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="4"
+                android:textSize="60sp"
+                android:background="@drawable/back"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="2"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="3"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="4"
+                android:textSize="60sp"
+                android:background="@drawable/back"/>
+        </TableRow>
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="2"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="3"
+                android:background="@drawable/back"/>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:text="4"
+                android:textSize="60sp"
+                android:background="@drawable/back"/>
+        </TableRow>
+
+    </TableLayout>
+</FrameLayout>
