@@ -2,9 +2,11 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:layout_marginTop="30dp"/>
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
 </android.support.constraint.ConstraintLayout>
