@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.PixelFormat;
 import android.os.Handler;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
@@ -15,8 +14,6 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.nhn.android.maps.NMapActivity;
@@ -37,7 +34,7 @@ import net.skhu.leisure.R;
 import net.skhu.leisure.SportsActivity;
 
 public class GomduriMap extends NMapActivity {
-    private  int c= 0;
+
     private final String  TAG = "GomduriMap";
 
     private ViewGroup mapLayout;
@@ -53,10 +50,10 @@ public class GomduriMap extends NMapActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acitivity_gomdurimap);
+// Here, thisActivity is the current activity
 
-        Button button = (Button)findViewById(R.id.btn_position);
         init();
-        button.bringToFront();
+
 
     }
 
@@ -64,6 +61,7 @@ public class GomduriMap extends NMapActivity {
 
 
         mapLayout = findViewById(R.id.mapLayout);
+
         mMapView = new NMapView(this);
         mMapView.setClientId(getResources().getString(R.string.NAVER_API_KEY)); // 클라이언트 아이디 값 설정
         mMapView.setClickable(true);
@@ -73,12 +71,13 @@ public class GomduriMap extends NMapActivity {
         mMapView.setScalingFactor(1.7f);        //이것을 안해주면 줌시켜서 축소 시켜도 작게보
         mMapView.requestFocus();
         mMapContainerView = new MapContainerView(this);
-  //      mMapContainerView.addView(mMapView);
+        mMapContainerView.addView(mMapView);
+
         // set the activity content to the map view
-  //      setContentView(mMapView);
+        setContentView(mMapContainerView);
         mMapView.setOnMapStateChangeListener(changeListener);
         mMapView.setOnMapViewTouchEventListener(mapListener);
-        mapLayout.addView(mMapView);
+//        mapLayout.addView(mMapContainerView);
         nMapResourceProvider = new NMapViewerResourceProvider(this);
         mapOverlayManager = new NMapOverlayManager(this, mMapView, nMapResourceProvider);
         mMapLocationManager = new NMapLocationManager(this);
@@ -96,13 +95,8 @@ public class GomduriMap extends NMapActivity {
         }, 2000);
     }
     public void button3_clicked(View button) {
-        if(c ==0) {
-            startMyLocation();
-            c++;
-        }else {
-            stopMyLocation();
-            c=0;
-        }
+        startMyLocation();
+
     }
     private final NMapLocationManager.OnLocationChangeListener onMyLocationChangeListener = new NMapLocationManager.OnLocationChangeListener() {
 
