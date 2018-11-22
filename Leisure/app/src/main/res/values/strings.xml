@@ -11,6 +11,7 @@
     <string name="gomcontact">전화 : (02)-404-6240 / 팩스 : (02)-443-8025</string>
     <string name="gomtrans">버스 : 일반버스 3314, 3315, 362(좌석) 송파도서관 하차</string>
     <string name="gomtrans2">지하철 : 전철 5호선 개룡역 1번 출구 도보 3분</string>
+    <string name="current">현재위치</string>
     <string-array name="Center">
         <item>서울특별시</item>
         <item>1. 동천재활체육센터 (노원구)</item>
