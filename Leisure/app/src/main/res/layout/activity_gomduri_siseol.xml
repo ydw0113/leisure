@@ -29,39 +29,56 @@
 
     <TextView
         android:id="@+id/infotextView2"
-        android:layout_width="329dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="380dp"
+        android:layout_height="27dp"
         android:layout_marginBottom="72dp"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@android:drawable/presence_online"
+        android:drawablePadding="10dp"
         android:text="이미지를 넘기면서 확인하세요!"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgPager"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.41" />
 
     <view
         android:id="@+id/imgPager"
         class="android.support.v4.view.ViewPager"
         id="@+id/view"
-        android:layout_width="350dp"
-        android:layout_height="310dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="333dp"
+        android:layout_height="273dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        android:adjustViewBounds="true"/>
 
     <TextView
         android:id="@+id/explanation"
-        android:layout_width="0dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="376dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:paddingLeft="10dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sizeText" />
+
+    <TextView
+        android:id="@+id/sizeText"
+        android:layout_width="0dp"
+        android:layout_height="21dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@android:drawable/presence_online"
+        android:drawablePadding="10dp"
+        android:text="TextView"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
